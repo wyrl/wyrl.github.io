@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+    	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    	<title>Sign In</title>
+        <script type="text/javascript" src="jquery.js"></script>
+        <script type="text/javascript" src="buttonJS.js"></script>
+        <link rel="stylesheet" href="style.css"/>
+        <link rel="stylesheet" href="buttonStyle.css"/>
+    </head>
+
+    <body>
+    	<script>
+			$(document).ready(function(e) {
+				startButton();
+
+
+                $("#login-body table input").focusin(function(e) {
+                    $(this).css("background-color","#FF9");
+                }).focusout(function(e) {
+                    $(this).css("background-color","#c3c3c3");
+                });
+
+				$("#login-header .border > img").click(function(e) {
+                    $("#login-foreground").fadeOut(200);
+                });
+				$(".test").click(function(e) {
+                    $("#login-foreground").fadeIn(200);
+                });
+				$("#test").click(function(e) {
+					$(".effect").removeClass("spinAnim");
+					$("#test2").text("spin");
+                    $(".line").addClass("lineAnim");
+					$(".effect").addClass("rotation");
+					$(".title").addClass("fade-out-in2");
+					$(".msg-body").addClass("fade-out-in");
+					$(".msg-body > span").text("Wrong Username and Password!");
+                });
+				$("#test2").click(function(e) {
+					$(".line").removeClass("lineAnim");
+					$(".effect").removeClass("rotation");
+					$(".title").removeClass("fade-out-in2");
+					$(".msg-body").removeClass("fade-out-in");
+					if($(this).text().toLowerCase() == "spin"){
+						$(".msg-body > span").text("Loading...");
+						$(this).text("stop");
+						$(".effect").addClass("spinAnim");
+					}else{
+						$(this).text("spin");
+						$(".effect").removeClass("spinAnim");
+					}
+				});
+
+				$("#btn-login").click(function(e) {
+                    var username = $("#username").val();
+					var pass = $("#pass").val();
+					var isValid = validation(username,pass);
+
+					if(isValid){
+						$(this).attr("type","submit");
+					}
+                });
+
+
+
+				function validation(username,pass)
+				{
+					var msg = "";
+					var err = false;
+					if(username.trim() == ""){
+						err = true;
+						msg += "<p>Empty field Username.</p>";
+					}
+					if(pass.trim() == ""){
+						err = true;
+						msg += "<p>Empty field Password.</p>";
+					}
+
+
+
+					if(err){
+						displayAlert("Error!",msg);
+					}
+					else{
+						return true;
+					}
+					return false;
+				}
+				function displayAlert(title,msg)
+				{
+					$(".line").removeClass("lineAnim");
+					$(".effect").removeClass("rotation");
+					$(".title").removeClass("fade-out-in2");
+					$(".msg-body").removeClass("fade-out-in");
+					setTimeout(function(){
+						$(".line").addClass("lineAnim");
+						$(".effect").addClass("rotation");
+						$(".title").addClass("fade-out-in2");
+						$(".msg-body").addClass("fade-out-in");
+					},1);
+					$(".msg-body > span").html(msg);
+					var vCenter = $(".effect").height() / 2;
+					$(".title").css("top",vCenter);
+					$(".title > span").text(title);
+				}
+
+
+            });
+		</script>
+        <div class="effect">
+            <div class = "line">
+            </div>
+            <div class="msg">
+                <img src="images/buslot.png" width="35px" height="18px"/>
+                <div class="title">
+                    <img src="images/warning.png" />
+                    <span>Error!</span>
+                </div>
+                <div class="msg-body">
+                    <span>Wrong Username and Password!</span>
+                </div>
+            </div>
+   		 </div>
+        <div id="login-main">
+        	<form method="post">
+                <div id="login-form">
+                    <div id="login-header">
+                        <div class="border">
+                            <span>Sign In</span>
+                            <!--<img src="images/close.png"/>-->
+                        </div>
+                    </div>
+                    <div id="login-body">
+                        <table cellpadding="10">
+                            <tr>
+                                <td>
+                                    <span>Username:</span>
+                                </td>
+                                <td>
+                                    <div class="input-border">
+                                        <input id="username" type="text" name="username" />
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span>Password:</span>
+                                </td>
+                                <td>
+                                    <div class="input-border">
+                                        <input id="pass" type="password" name="pass" />
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <input id="btn-login" type="button" class="custom-button" value="Sign In" edit-byclass="edit-button"/>
+                </div>
+        	</form>
+            <div class="paper">
+        		<div class="bg-image">
+                	<span>Online:</span><br/>
+                    <span>1030</span>
+                </div>
+                <div class="bg-image2">
+                	<span>Member:</span><br/>
+                    <span>1030</span>
+                </div>
+        	</div>
+        </div>
+        <button id="test">Test</button>
+        <button id="test2">Spin</button>
+    </body>
+</html>

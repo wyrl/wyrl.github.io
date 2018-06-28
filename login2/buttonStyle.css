@@ -1,0 +1,14 @@
+.btn-custom{
+	display:inline-block;
+	background-color:rgba(204,204,204,1);
+	color:rgba(51,51,51);
+	-moz-user-select:none;
+	-webkit-user-select:none;
+	-o-user-select:none;	
+}
+.btn-custom:hover{
+	cursor:pointer;	
+}
+.btn-custom input[type=submit]{
+	display:none;
+}
