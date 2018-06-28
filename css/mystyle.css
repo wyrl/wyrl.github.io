@@ -12,7 +12,7 @@ body{
   /*background-image: url("../img/ocean2.jpg");*/
   background-image: url("../img/bg1.png");
   background-attachment: fixed;
-  font-family: Amatic-SC;
+  font-family: Segoe-UI;
   font-size: 20px;
 }
 @font-face{
@@ -146,6 +146,14 @@ body > footer {
   position: absolute;
   bottom: 0;
   width: 100%;
+}
+
+.container{
+  margin-top: 45px;
+  margin-bottom: 45px;
+}
+.container > h1{
+  margin-bottom: 45px;
 }
 
 body > footer > .container > .row{
