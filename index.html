@@ -8,7 +8,7 @@
     <meta http-equiv="cache-control" content="no-cache" />
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="-1" />
-		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="vendor/css/bootstrap.min.css" />
 		<link rel="stylesheet" type="text/css" href="css/bootstrap-social.css" />
 		<link rel="stylesheet" type="text/css" href="css/font-awesome.css" />
 		<script src="../js/jquery-3.2.1.js"></script>
@@ -19,11 +19,11 @@
 	
 	<body>
 		<header id="header-banner">
-			<div class="wide row text-center">
+			<div class="wide row text-center justify-content-center">
 			    <h3><span class="websitename" style="margin-right:10px">My</span><span class="com" style="font-size:55px;">Portfolio</span></h3>
 			</div>
 		</header>
-<section class="jumbotron bg-white test content">
+<section class="jumbotron test content" style="margin:10px">
 	<blockquote>
 		<p>
 			&ldquo;Gates is the ultimate programming machine. He believes everything can be defined, examined, reduced to essentials, and rearranged into a logical sequence that will achieve a particular goal.&rdquo; 
@@ -32,7 +32,7 @@
 	</blockquote>
 </section>
 <section>
-  <div id="profile" class="container">
+  <div id="profile" class="container-fluid">
         <header>
           <div id="left-status">
             <header class="bg-blue">
@@ -188,52 +188,61 @@
 </section>
 <section class="container">
 	<h1>My Demos</h1>
-  <div class="row">
-    <figure class="col-sm-6">
-     	<a href="windows-like/index.html" target="_blank">
-      		<p>Windows-Like - I created own JQuery Plugin</p>
-      		<img src="img/window_like.png" />
-      	</a>
-    </figure>
-    <figure class="col-sm-6">
-    	<a href="login2/index.html" target="_blank">
-    		<p>Login - HTML + CSS + JQuery</p>
-      		<img src="img/login.png" />
-    	</a>
-    </figure>
+  <div class="row justify-content-center">
+    <div class="col">
+    	<div class="card">
+    		<img class="card-img-top" src="img/window_like.png" style="width: 350px" />
+    		<div class="card-body">
+    			<h4 class="card-title"><b>Multiple WINDOWS FORM CREATING MY OWN JQUERY PLUG-IN</b></h4>
+    			<p class="card-text">This program is made to view the picture in the screen separately without leaving the other out of sight. It will automatically separate the selected picture from the other which was not selected. </p>
+    			<a href="my_demos/windows-like/index.html" class="btn btn-primary" target="_blank">See Demo</a>
+    		</div>
+    	</div>
+    </div>
   </div>
-  <div class="row">
-    <figure class="col-sm-6">
-    	<a href="floating-login/index.html" target="_blank">
-    		<p>Floating Login - HTML + CSS + JQuery</p>
-      		<img src="img/floating_login.png" />
-    	</a>
-    </figure>
-    <!--<figure class="col-sm-6">
-      <p>Demo 4</p>
-      <img src="http://localhost/wyrl/assets/img/antique.jpg" />
-    </figure>-->
-  </div>
-  <!--<div class="row">
-    <button class="btn btn-primary col-sm-12 btn-category">More Category</button>
-  </div>-->
 </section>
 <section class="container">
   <h1>My Videos</h1>
   <div class="row">
     <figure class="col-sm-6">
-          <p>Game - using Python with Pygame</p>
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/wc4_lfraCKc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    	<div class="card">
+    		<iframe height="500" src="https://www.youtube.com/embed/wc4_lfraCKc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    		<div class="card-header">
+    			<h4 class="card-title"><b>2D GAME USING PHYTON PROGRAMMING</b></h4>
+    		</div>
+    		<div class="card-body">
+    			<p class="card-text">This 2D Game I made is for pleasure use only. It is a conventional stickman character battle against zombie patterned on a popular game called “PLANTS VS. ZOMBIES”. In here, the “Stickman” as the hero against so many “Zombies.”</p>
+    		</div>
+    	</div>
+          
     </figure>
     <figure class="col-sm-6">
-        <p>Payroll System - C# + Crystal Report + Bunifu Framework + Setup</p>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/5BTKrqmMaw4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <!--<p>Payroll System - C# + Crystal Report + Bunifu Framework + Setup</p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/5BTKrqmMaw4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>-->
+        <div class="card">
+    		 <iframe height="500" src="https://www.youtube.com/embed/5BTKrqmMaw4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    		<div class="card-header">
+    			<h4 class="card-title"><b>PAYROLL SYSTEM</b></h4>
+    		</div>
+    		<div class="card-body">
+    			<p class="card-text">This program is all about Payroll System. This can be used to store vital information of the employee and automatically compute the payroll of the employee that can help the company for easy and immediate compliance of their task including government dues. As of now, I currently develop a web based payroll system.</p>
+    		</div>
+    	</div>
     </figure>
   </div>
   <div class="row">
     <figure class="col-sm-6">
-        <p>Arduino + OpenCV</p>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/DgO0-W8KbgM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    	<div class="card">
+    		 <iframe height="500" src="https://www.youtube.com/embed/DgO0-W8KbgM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    		<div class="card-header">
+    			<h4 class="card-title"><b>FACE DETECTOR CAMERA</b></h4>
+    		</div>
+    		<div class="card-body">
+    			<p class="card-text">This program is an automatic face detection camera using my old webcam, and will automatically follow any face detected by the camera. It is so sensitive that it detected even the image of the person in the picture. This can also be used in any video calling amd CCTV wherein the person can easily move from one area to another and the camera will follow.</p>
+    		</div>
+    	</div>
+        <!--<p>Arduino + OpenCV</p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/DgO0-W8KbgM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>-->
     </figure>
     <!--<figure class="col-sm-6">
       <p>Demo 4</p>
