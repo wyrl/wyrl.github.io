@@ -10,7 +10,8 @@ $(document).ready(function(){
 		'MySQL is an open-source relational database management system. Its name is a combination of "My", the name of co-founder Michael Widenius\'s daughter, and "SQL", the abbreviation for Structured Query Language.',
 		'HTML5 is a markup language used for structuring and presenting content on the World Wide Web. It is the fifth and current major version of the HTML standard.',
 		'JavaScript, often abbreviated as JS, is a high-level, interpreted programming language. It is a language which is also characterized as dynamic, weakly typed, prototype-based and multi-paradigm.',
-		'CSS3 is the latest evolution of the Cascading Style Sheets language and aims at extending CSS2.1. It brings a lot of long-awaited novelties, like rounded corners, shadows, gradients, transitions or animations, as well as new layouts like multi-columns, flexible box or grid layouts.'		
+		'CSS3 is the latest evolution of the Cascading Style Sheets language and aims at extending CSS2.1. It brings a lot of long-awaited novelties, like rounded corners, shadows, gradients, transitions or animations, as well as new layouts like multi-columns, flexible box or grid layouts.',
+		'Arduino is an open source computer hardware and software company, project, and user community that designs and manufactures single-board microcontrollers and microcontroller kits for building digital devices and interactive objects that can sense and control objects in the physical and digital world.'		
 	];
 	$('img.border').hover(function() {
 		$(this).addClass('border-primary');
@@ -26,7 +27,7 @@ $(document).ready(function(){
 		imgEl.removeClass('border');
 		imgEl.removeClass('border-primary');
 		var img = $(this).html();
-
+		var $p = $(this);
 		var f = $('<div>'+ 
 					'<div class="content">' + 
 						'<div class="card">' + img + '</div>' +
@@ -39,7 +40,16 @@ $(document).ready(function(){
 					'</div>' +
 				'</div>');
 		$('#forms').append(f);
-		f.winform();
+		f.winform({
+			title : skills[index],
+			closing : function(){
+				imgEl.addClass('border');
+				imgEl.addClass('border-primary');
+				$p.show();
+				countPositionX = 0;
+				countPositionY = 0;
+			}
+		});
 		f.width(350);
 		f.height(500);
 		f.animate({

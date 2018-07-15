@@ -504,7 +504,6 @@
 				wf.addMaximize({
 					visible : true,
 					maximizing : function(toggle){
-
 					}
 				});
 
@@ -527,6 +526,8 @@
 						remove(minimizeList, $winform);
 						remove(taskList, $winform);
 						animateTaskbar();
+						if(opts.closing != null)
+							opts.closing();
 						console.log('closed...');
 					}
 				});
