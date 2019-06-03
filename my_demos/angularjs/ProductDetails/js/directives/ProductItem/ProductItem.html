@@ -1,0 +1,13 @@
+<div class="card product">
+  <img class="card-img-top" ng-src="{{item.image_src}}" alt="Card image">
+  <div class="card-body">
+    <h4 class="card-title">{{item.title}}</h4>
+    <p class="detail">
+    	{{item.full_detail}}
+      <br/>
+    	<a href="#" ng-click="more(item.detail)">{{link_text}}</a>
+    </p>
+    <p class="price">{{item.price | currency: '₱ '}}</p>
+    <a href="{{item.visit_link}}" target="_blank" class="btn btn-primary">Visit for more details</a>
+  </div>
+</div>

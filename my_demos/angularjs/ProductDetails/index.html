@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>ItemList</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+</head>
+<body ng-app="ItemList">
+	<!--Header-->
+	
+
+
+	<!-- End Header -->
+
+
+	<!-- Content -->
+  <main ng-controller="MainController">
+    <section class="container">
+      <div class="row">
+        <div class="col-md-4" ng-repeat="product in products">
+          <product-item item="product"></product-item>
+        </div>
+      </div>
+    </section>
+  </main>
+	<!-- End Content -->
+
+	<!-- Footer -->
+
+
+	<!-- End Footer -->
+
+  
+  <!-- App -->
+  <script src="js/app.js"></script>
+
+
+  <!-- Controllers -->
+  <script src="js/controllers/MainController.js"></script>
+
+  <!-- Directives -->
+  <script src="js/directives/ProductItem/ProductItem.js"></script>
+
+  <!-- Services -->
+  <script src="js/services/products.js"></script>  
+
+</body>
+
+</html>
