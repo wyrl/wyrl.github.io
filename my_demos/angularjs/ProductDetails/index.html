@@ -10,6 +10,17 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+
+  <style type="text/css">
+    .loading{
+      position: fixed;
+      display: flex;
+    }
+    .loading > span {
+      margin: auto;
+    }
+  </style>
+
 </head>
 <body ng-app="ItemList">
 	<!--Header-->
@@ -21,6 +32,8 @@
 
 	<!-- Content -->
   <main ng-controller="MainController">
+    <loading></loading>
+    <testing></testing>
     <section class="container">
       <div class="row">
         <div class="col-md-4" ng-repeat="product in products">
@@ -46,6 +59,8 @@
 
   <!-- Directives -->
   <script src="js/directives/ProductItem/ProductItem.js"></script>
+  <script src="js/directives/loading.js"></script>
+
 
   <!-- Services -->
   <script src="js/services/products.js"></script>  
